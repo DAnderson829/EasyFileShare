@@ -21,7 +21,7 @@ public class JavaFxLauncher extends Application {
         loader.setControllerFactory(springContext::getBean);
         
         Scene scene = new Scene(loader.load());
-        primaryStage.setTitle("JavaFX + Spring Boot");
+        primaryStage.setTitle("EasyFileSwap");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
