@@ -52,7 +52,7 @@ public class User {
         this.hashPassword = new BCryptPasswordEncoder().encode(newPassword);
     }
 	
-	
+	public String getHashPassword() {return hashPassword;}
 	public Long getId() {return Id;}
 	public void setEmail(String email) {this.email = email;}
 	public String getEmail() {return email;}
