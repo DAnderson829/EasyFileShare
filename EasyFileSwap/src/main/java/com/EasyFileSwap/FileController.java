@@ -16,7 +16,11 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/files")
 public class FileController {
 
-	FileConvert convert = new FileConvert();
+	private FileConvert convert = new FileConvert();
+	
+	public FileController(FileConvert convert) {
+		this.convert = convert;
+	}
 	
 	@PostMapping("/convert")
 	public ResponseEntity<?> convertFile(@RequestParam MultipartFile file, @RequestParam String targetFormat) {
