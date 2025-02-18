@@ -23,10 +23,12 @@ public class FileController {
         try {
             byte[] convertedData = convertFileFormat(file, targetFormat);
             String outputFileName = "converted-file." + targetFormat.toLowerCase();
-
             return ResponseEntity.ok()
+            		//It sets the Content-Disposition header to indicate that the response should prompt a download with the filename specified (outputFileName).
                     .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + outputFileName)
+                    //The Content-Type is set to MediaType.APPLICATION_OCTET_STREAM, which signifies that the body contains binary data.
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                    //sets the response body to convertedData, which is the byte array containing the converted file.
                     .body(convertedData);
         } catch (IOException e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error processing file: " + e.getMessage());

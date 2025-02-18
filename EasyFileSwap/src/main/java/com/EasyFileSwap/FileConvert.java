@@ -34,7 +34,6 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 
 public class FileConvert {
 
-	// PDFBox, PDFBox Tools
 	public static File convertPdfToTxt(File pdfFile) throws IOException {
 		String outputPath = pdfFile.getParent() + File.separator + pdfFile.getName().replaceFirst("[.][^.]+$", "")
 				+ ".txt";
